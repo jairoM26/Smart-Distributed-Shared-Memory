@@ -5,17 +5,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../DataAccess/RapidJson.cpp \
-../DataAccess/jSonReader.cpp \
 ../DataAccess/jsondom.cpp 
 
 OBJS += \
 ./DataAccess/RapidJson.o \
-./DataAccess/jSonReader.o \
 ./DataAccess/jsondom.o 
 
 CPP_DEPS += \
 ./DataAccess/RapidJson.d \
-./DataAccess/jSonReader.d \
 ./DataAccess/jsondom.d 
 
 
