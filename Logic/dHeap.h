@@ -7,34 +7,23 @@
 
 #ifndef LOGIC_DHEAP_H_
 #define LOGIC_DHEAP_H_
-
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <string.h>
 using namespace std;
 class dHeap {
 private:
-	dHeap(){
-
-	}
+	dHeap(string pPath);
 	static bool instanceFlag;
-	static dHeap *_DHeap;
+	static dHeap* _DHeap;
 public:
 	static dHeap* getInstance();
-	~dHeap(){
-		instanceFlag = false;
-	}
+	int dMalloc(int, string);
+	virtual ~dHeap();
 };
 #endif /* LOGIC_DHEAP_H_ */
 
 
-bool dHeap::instanceFlag = false;
-dHeap::_DHeap = NULL;
-dHeap* dHeap::getInstance(){
-	if (!instanceFlag)
-	{
-		_DHeap = new dHeap();
-		instanceFlag = true;
-		return _DHeap;
-	}else{
-		return _DHeap;
-	}
-}
+
 

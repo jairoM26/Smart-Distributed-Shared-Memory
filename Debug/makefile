@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Logic/subdir.mk
+-include DataStructure/subdir.mk
 -include DataComunication/subdir.mk
 -include DataAccess/subdir.mk
 -include subdir.mk
@@ -46,7 +47,7 @@ all: Smart\ Distributed\ Shared\ Memory
 Smart\ Distributed\ Shared\ Memory: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++  -o "Smart Distributed Shared Memory" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -lpthread -pthread  -o "Smart Distributed Shared Memory" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
